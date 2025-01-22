@@ -5,7 +5,7 @@ $star_color: rgba(255, 179, 0, 0.8);
 * {
   margin: 0px;
   padding: 0px;
-  box-sizing: border-box;
+  box-sizing: border-box; //使計算寬度時考慮 padding 和 border
 }
 
 ol,
@@ -102,7 +102,8 @@ body {
       }
     }
   }
-  main.desktop {
+
+  main {
     display: flex;
     flex-direction: column;
     // justify-content: center;
@@ -131,7 +132,7 @@ body {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
-        margin-bottom: 20px;
+        margin-bottom: 10px;
 
         div.smallbox {
           height: 100%;
@@ -145,406 +146,131 @@ body {
           margin-right: 10px;
           figure {
             height: 100%;
-            img {
-              object-fit: cover;
-              height: 100%;
-              width: 80px;
-            }
+            height: 100%;
+            width: 80px;
+            // background-image: url(../img/ai_generated_img.jpeg);
+            background-size: cover;
           }
           div.text {
             display: flex;
             align-items: center;
             justify-content: center;
             // width: 100%;
-            div {
-              margin: 10px;
-              font-size: $fontsize;
-            }
+            margin-left: 10px;
+            font-size: $fontsize;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden;
           }
         }
       }
 
       div.bigbox_area {
         display: flex;
+        flex-wrap: wrap;
         // flex-direction: column;
         justify-content: flex-start;
         align-items: flex-start;
         width: 1200px;
-        height: 200px;
-        margin-bottom: 20px;
-        div.bigbox {
-          width: 100%;
-          height: 100%;
-          display: flex;
-          flex-direction: row;
-          justify-content: flex-start;
-          align-items: flex-start;
-
-          div.bigbox0 {
-            // flex-shrink: 0;
-            width: 380px;
-            height: 100%;
-            margin-left: 10px;
-            margin-right: 10px;
-            figure {
-              background-image: url(../img/ai_generated_img.jpeg);
-              background-size: cover;
-              width: 100%;
-              height: 100%;
-              display: flex;
-              flex-direction: column;
-              div.star {
-                height: 80%;
-                width: 100%;
-                display: flex;
-                justify-content: flex-end;
-                align-items: flex-start;
-                span {
-                  padding: 10px;
-                  font-size: $fontsize;
-                  color: $star_color;
-                }
-              }
-
-              div.text {
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                background-color: $text_background_color;
-                height: 20%;
-                width: 100%;
-                div {
-                  margin: 10px;
-                  font-size: $fontsize;
-                }
-              }
-            }
-          }
-          div.bigbox1 {
-            // flex-shrink: 0;
-            width: 180px;
-            height: 100%;
-            margin-left: 10px;
-            margin-right: 10px;
-            figure {
-              background-image: url(../img/ai_generated_img.jpeg);
-              background-size: cover;
-              width: 100%;
-              height: 100%;
-              display: flex;
-              flex-direction: column;
-
-              div.star {
-                height: 80%;
-                width: 100%;
-                display: flex;
-                justify-content: flex-end;
-                align-items: flex-start;
-                span {
-                  padding: 10px;
-                  font-size: $fontsize;
-                  color: $star_color;
-                }
-              }
-              div.text {
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                background-color: $text_background_color;
-                height: 20%;
-                width: 100%;
-                div {
-                  margin: 10px;
-                  font-size: $fontsize;
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-
-  main.medium {
-    display: none;
-    flex-direction: column;
-    // justify-content: center;
-    align-items: center;
-    div.welcome {
-      //   border: 2px solid blue;
-      background-color: lightblue;
-      height: 250px;
-      width: 100%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      margin-bottom: 20px;
-      div.welcome_text {
-        text-align: center;
-        font-size: 40px;
-        font-weight: bolder;
-      }
-    }
-
-    article {
-      width: 90%;
-
-      div.smallbox_area {
-        height: 50px;
-        width: 100%;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
+        height: 420px;
         margin-bottom: 20px;
 
-        div.smallbox {
-          height: 100%;
-          width: 100%;
-          display: flex;
-          background-color: lightblue;
-          justify-content: flex-start;
-          align-items: center;
-          //   margin: 10px;
-          margin-left: 10px;
-          margin-right: 10px;
+        div.bigbox1 {
+          width: calc(380px); /* bigbox1 的寬度是 1200px 的 2/5 */
+          box-sizing: border-box;
+          height: 200px;
+          margin: 10px;
           figure {
-            height: 100%;
-            img {
-              object-fit: cover;
-              height: 100%;
-              width: 80px;
-            }
-          }
-          div.text {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            // width: 100%;
-            div {
-              margin: 10px;
-              font-size: $fontsize;
-            }
-          }
-        }
-      }
-
-      div.bigbox_area {
-        display: flex;
-        // flex-direction: column;
-        justify-content: flex-start;
-        align-items: flex-start;
-        width: 100%;
-        height: 200px;
-        margin-bottom: 20px;
-        div.bigbox {
-          width: 100%;
-          height: 100%;
-          display: flex;
-          flex-direction: row;
-          justify-content: space-between;
-          align-items: flex-start;
-
-          div.bigbox0 {
-            // flex-shrink: 0;
-            width: 380px;
-            height: 100%;
-            margin-left: 10px;
-            margin-right: 10px;
-            figure {
-              background-image: url(../img/ai_generated_img.jpeg);
-              background-size: cover;
-              width: 100%;
-              height: 100%;
-              display: flex;
-              flex-direction: column;
-              div.star {
-                height: 80%;
-                width: 100%;
-                display: flex;
-                justify-content: flex-end;
-                align-items: flex-start;
-                span {
-                  padding: 10px;
-                  font-size: $fontsize;
-                  color: $star_color;
-                }
-              }
-
-              div.text {
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                background-color: $text_background_color;
-                height: 20%;
-                width: 100%;
-                div {
-                  margin: 10px;
-                  font-size: $fontsize;
-                }
-              }
-            }
-          }
-          div.bigbox1 {
-            // flex-shrink: 0;
+            background-size: cover;
+            background-position: center;
             width: 100%;
             height: 100%;
-            margin-left: 10px;
-            margin-right: 10px;
-            figure {
-              background-image: url(../img/ai_generated_img.jpeg);
-              background-size: cover;
+            display: flex;
+            flex-direction: column;
+            div.star {
+              height: 80%;
               width: 100%;
-              height: 100%;
               display: flex;
-              flex-direction: column;
-
-              div.star {
-                height: 80%;
-                width: 100%;
-                display: flex;
-                justify-content: flex-end;
-                align-items: flex-start;
-                span {
-                  padding: 10px;
-                  font-size: $fontsize;
-                  color: $star_color;
-                }
+              justify-content: flex-end;
+              align-items: flex-start;
+              span {
+                padding: 10px;
+                font-size: $fontsize;
+                color: $star_color;
               }
-              div.text {
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                background-color: $text_background_color;
-                height: 20%;
-                width: 100%;
-                div {
-                  margin: 10px;
-                  font-size: $fontsize;
-                }
+            }
+
+            div.text {
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              background-color: $text_background_color;
+              height: 20%;
+              width: 100%;
+              font-size: $fontsize;
+              text-align: center;
+              text-overflow: ellipsis;
+              white-space: nowrap;
+              overflow: hidden;
+              padding: 10px;
+              p {
+                text-align: center; /* 文字居中 */
+                white-space: nowrap; /* 防止換行 */
+                overflow: hidden; /* 隱藏超過部分 */
+                text-overflow: ellipsis; /* 顯示省略號 */
+                box-sizing: border-box; /* 確保計算寬度時包括 padding 和 border */
               }
             }
           }
         }
-      }
-    }
-  }
 
-  main.mobile {
-    display: none;
-    flex-direction: column;
-    // justify-content: center;
-    align-items: center;
-
-    div.welcome {
-      //   border: 2px solid blue;
-      background-color: lightblue;
-      height: 250px;
-      width: 100%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      margin-bottom: 20px;
-      div.welcome_text {
-        text-align: center;
-        font-size: 40px;
-        font-weight: bolder;
-      }
-    }
-
-    article {
-      width: 90%;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-
-      div.smallbox_area {
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        margin-bottom: 10px;
-        padding-left: 10px;
-        padding-right: 10px;
-        div.smallbox {
-          height: 50px;
-          width: 100%;
-          display: flex;
-          background-color: lightblue;
-          justify-content: flex-start;
-          align-items: center;
-          margin-top: 10px;
-          margin-bottom: 10px;
+        div.bigbox {
+          width: calc(180px); /* bigbox 的寬度是 1200px 的 1/5 */
+          box-sizing: border-box;
+          height: 200px;
+          margin: 10px;
           figure {
+            background-size: cover;
+            background-position: center;
+            width: 100%;
             height: 100%;
-            img {
-              object-fit: cover;
-              height: 100%;
-              width: 80px;
-            }
-          }
-          div.text {
-            display: flex;
-            align-items: center;
-            justify-content: flex-start;
-            width: 100%;
-            div {
-              margin: 10px;
-              font-size: $fontsize;
-            }
-          }
-        }
-      }
-
-      div.bigbox_area {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: flex-start;
-        width: 100%;
-
-        div.bigbox {
-          width: 100%;
-          height: 100%;
-          display: flex;
-          flex-direction: column;
-
-          div.bigbox1 {
-            flex-shrink: 0;
-            width: 100%;
-            height: 300px;
-            padding-left: 10px;
-            padding-right: 10px;
-            margin-bottom: 20px;
-            figure {
-              background-image: url(../img/ai_generated_img.jpeg);
-              background-size: cover;
+            // display: flex;
+            // flex-direction: column;
+            div.star {
+              height: 80%;
               width: 100%;
-              height: 100%;
               display: flex;
-              flex-direction: column;
-
-              div.star {
-                height: 80%;
-                width: 100%;
-                display: flex;
-                justify-content: flex-end;
-                align-items: flex-start;
-                span {
-                  padding: 10px;
-                  font-size: $fontsize;
-                  color: $star_color;
-                }
+              justify-content: flex-end;
+              align-items: flex-start;
+              span {
+                padding: 10px;
+                font-size: $fontsize;
+                color: $star_color;
               }
-              div.text {
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                background-color: $text_background_color;
-                height: 20%;
-                width: 100%;
-                div {
-                  margin: 10px;
-                  font-size: $fontsize;
-                }
+            }
+
+            div.text {
+              background-color: $text_background_color;
+              height: 20%;
+              width: 100%;
+              min-width: 0;
+              font-size: $fontsize;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              padding: 10px;
+              text-align: center; /* 文字居中 */
+              white-space: nowrap; /* 防止換行 */
+              overflow: hidden; /* 隱藏超過部分 */
+              text-overflow: ellipsis; /* 顯示省略號 */
+              box-sizing: border-box; /* 確保計算寬度時包括 padding 和 border */
+
+              p {
+                text-align: center; /* 文字居中 */
+                white-space: nowrap; /* 防止換行 */
+                overflow: hidden; /* 隱藏超過部分 */
+                text-overflow: ellipsis; /* 顯示省略號 */
+                box-sizing: border-box; /* 確保計算寬度時包括 padding 和 border */
               }
             }
           }
@@ -556,14 +282,66 @@ body {
 
 @media screen and (max-width: 1200px) {
   body {
-    main.desktop {
-      display: none;
-    }
-    main.medium {
-      display: flex;
-    }
-    main.mobile {
-      display: none;
+    main {
+      div.welcome {
+        margin-bottom: 0;
+      }
+      article {
+        width: 90vw;
+
+        div.smallbox_area {
+          margin-top: 10px;
+          margin-bottom: 10px;
+          height: 140px;
+          display: flex;
+          flex-wrap: wrap;
+          // flex-direction: column;
+          align-items: center;
+
+          div.smallbox {
+            flex: 1 1 45%;
+            // width: 45%;
+            // gap: 10px;
+            height: 50px;
+            background-color: lightblue;
+            justify-content: flex-start;
+            align-items: center;
+            //   margin: 10px;
+            // margin-left: 10px;
+            // margin-right: 10px;
+          }
+        }
+
+        div.bigbox_area {
+          width: 90vw;
+          gap: 20px;
+          height: auto;
+          margin-bottom: 0px;
+          flex-wrap: wrap; /* 讓元素換行 */
+          margin: 0 auto; /* 使大區塊水平居中 */
+          justify-content: center;
+          margin-bottom: 50px;
+
+          div.bigbox,
+          div.bigbox1 {
+            flex: none;
+            margin: 0;
+            width: calc(25% - 20px); /* 讓每個 box 宽度為四分之一，並考慮間距 */
+            .text {
+              padding: 10px;
+              text-align: left;
+              justify-content: flex-start;
+              overflow: hidden; /* 隱藏超過部分 */
+              text-overflow: ellipsis; /* 顯示省略號 */
+              white-space: nowrap; /* 防止文字換行 */
+            }
+          }
+        }
+        /* 第四行特例: 調整最後一行為兩個元素 */
+        .bigbox_area > .bigbox:nth-child(n + 9) {
+          width: calc(50% - 16px); /* 讓第9個元素開始佔據50%的寬度 */
+        }
+      }
     }
 
     header.mobile {
@@ -578,20 +356,47 @@ body {
 
 @media screen and (max-width: 600px) {
   body {
-    main.desktop {
-      display: none;
-    }
-    main.medium {
-      display: none;
-    }
-    main.mobile {
-      display: flex;
-    }
     header {
       display: none;
     }
     header.mobile {
       display: flex;
+    }
+    main {
+      article {
+        div.smallbox_area {
+          height: 210px;
+          div.smallbox {
+            flex: 1 1 100%;
+            margin: 0;
+          }
+        }
+
+        div.bigbox_area {
+          div.bigbox1 {
+            flex: 1 1 100%;
+            // margin-bottom: 20px;
+            figure {
+              div.text {
+                div {
+                  max-width: 284px;
+                }
+              }
+            }
+          }
+          div.bigbox {
+            flex: 1 1 100%;
+            // margin-bottom: 20px;
+            figure {
+              div.text {
+                div {
+                  max-width: 284px;
+                }
+              }
+            }
+          }
+        }
+      }
     }
   }
 }
