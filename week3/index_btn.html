@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Week1</title>
+    <meta name="author" content="Grover Chiu" />
+    <link rel="stylesheet" href="./style/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="web_title">My Website</div>
+      <nav>
+        <ul>
+          <li>Item 1</li>
+          <li>Item 2</li>
+          <li>Item 3</li>
+          <li>Item 4</li>
+        </ul>
+      </nav>
+    </header>
+    <header class="mobile">
+      <div class="web_title">My Website</div>
+      <div class="icon">
+        <img
+          src="./img/4781852_burger_line_list_menu_nav_icon.png"
+          alt="menu"
+          onclick="toggleMenu()"
+        />
+        <nav class="mobile" id="menuList">
+          <ul>
+            <img
+              src="./img/9104213_close_cross_remove_delete_icon.png"
+              alt="close"
+              onclick="closeMenu()"
+            />
+            <li>Item 1</li>
+            <li>Item 2</li>
+            <li>Item 3</li>
+            <li>Item 4</li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <div class="welcome">
+        <div class="welcome_text">Welcome to MyHome</div>
+      </div>
+      <article>
+        <div class="smallbox_area">
+          <div class="smallbox">
+            <figure></figure>
+            <div class="text"></div>
+          </div>
+          <div class="smallbox">
+            <figure></figure>
+            <div class="text"></div>
+          </div>
+          <div class="smallbox">
+            <figure></figure>
+            <div class="text"></div>
+          </div>
+        </div>
+        <div class="bigbox_area">
+          <!-- 第一個 box  -->
+          <div class="bigbox1">
+            <figure>
+              <div class="star"><span class="fa fa-star checked"></span></div>
+              <div class="text"></div>
+            </figure>
+          </div>
+          <div class="bigbox">
+            <figure>
+              <div class="star"><span class="fa fa-star checked"></span></div>
+              <div class="text"></div>
+            </figure>
+          </div>
+          <div class="bigbox">
+            <figure>
+              <div class="star"><span class="fa fa-star checked"></span></div>
+              <div class="text"></div>
+            </figure>
+          </div>
+          <div class="bigbox">
+            <figure>
+              <div class="star"><span class="fa fa-star checked"></span></div>
+              <div class="text"></div>
+            </figure>
+          </div>
+          <div class="bigbox">
+            <figure>
+              <div class="star"><span class="fa fa-star checked"></span></div>
+              <div class="text"></div>
+            </figure>
+          </div>
+
+          <!-- 第六個 box -->
+
+          <div class="bigbox1">
+            <figure>
+              <div class="star"><span class="fa fa-star checked"></span></div>
+              <div class="text"></div>
+            </figure>
+          </div>
+          <div class="bigbox">
+            <figure>
+              <div class="star"><span class="fa fa-star checked"></span></div>
+              <div class="text"></div>
+            </figure>
+          </div>
+          <div class="bigbox">
+            <figure>
+              <div class="star"><span class="fa fa-star checked"></span></div>
+              <div class="text"></div>
+            </figure>
+          </div>
+          <div class="bigbox">
+            <figure>
+              <div class="star"><span class="fa fa-star checked"></span></div>
+              <div class="text"></div>
+            </figure>
+          </div>
+          <div class="bigbox">
+            <figure>
+              <div class="star"><span class="fa fa-star checked"></span></div>
+              <div class="text"></div>
+            </figure>
+          </div>
+        </div>
+      </article>
+
+      <button id="loadMore" class="more">Load More</button>
+    </main>
+
+    <script src="app/task3.js"></script>
+  </body>
+</html>

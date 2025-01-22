@@ -10,6 +10,9 @@ ul {
   list-style: none;
 }
 
+body {
+  height: auto;
+}
 body header {
   display: flex;
   flex-direction: row;
@@ -82,9 +85,11 @@ body header.mobile div.icon nav.mobile ul li {
   margin: 10px;
 }
 body main {
+  height: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-bottom: 10vh;
 }
 body main div.welcome {
   background-color: lightblue;
@@ -239,6 +244,21 @@ body main article div.bigbox_area div.bigbox figure div.text p {
   text-overflow: ellipsis; /* 顯示省略號 */
   box-sizing: border-box; /* 確保計算寬度時包括 padding 和 border */
 }
+body main button.more {
+  margin: 10px;
+  padding: 10px;
+  width: 120px; /* 設定按鈕的寬度為 100px */
+  height: 50px; /* 設定按鈕的高度為 80px */
+  font-size: 20px; /* 設定文字大小 */
+  text-align: center; /* 使文字水平置中 */
+  border: none; /* 移除邊框 */
+  cursor: pointer; /* 設定鼠標懸停時顯示手形光標 */
+  border-radius: 8px; /* 設定圓角 */
+  transition: background-color 0.3s ease; /* 設定背景顏色過渡效果 */
+}
+body main button.more:hover {
+  background-color: rgba(0, 255, 175, 0.6); /* 鼠標懸停時的背景顏色 */
+}
 
 @media screen and (max-width: 1200px) {
   body main div.welcome {
@@ -271,7 +291,7 @@ body main article div.bigbox_area div.bigbox figure div.text p {
     flex-wrap: wrap; /* 讓元素換行 */
     margin: 0 auto; /* 使大區塊水平居中 */
     justify-content: center;
-    margin-bottom: 50px;
+    margin-bottom: 20px;
   }
   body main article div.bigbox_area div.bigbox,
   body main article div.bigbox_area div.bigbox1 {
@@ -289,7 +309,13 @@ body main article div.bigbox_area div.bigbox figure div.text p {
     white-space: nowrap; /* 防止文字換行 */
   }
   body main article .bigbox_area > .bigbox:nth-child(n+9) {
-    width: calc(50% - 16px); /* 讓第9個元素開始佔據50%的寬度 */
+    width: calc(50% - 20px); /* 讓第9個元素開始佔據50%的寬度 */
+  }
+  body main article #lastOne {
+    height: auto !important;
+  }
+  body main article #lastOne > .bigbox:nth-child(n+5) {
+    width: calc(100% - 20px);
   }
   body header.mobile div.icon nav.mobile {
     display: none;
