@@ -83,13 +83,13 @@ let moreSpotList = async (url, n) => {
     let figures = document.querySelectorAll("figure");
     let text_item = document.querySelectorAll("div.text");
 
-    for (let i = n - 1; i < figures.length && i < spot_list.length; i++) {
+    for (let i = n; i < figures.length && i < spot_list.length; i++) {
       const figure = figures[i];
       let img = "https://" + spot_list[i].filelist.split("https://")[1];
       figure.style.backgroundImage = `url(${img})`;
     }
 
-    for (let i = n - 1; i < text_item.length && i < spot_list.length; i++) {
+    for (let i = n; i < text_item.length && i < spot_list.length; i++) {
       let div_text = text_item[i];
       var p_tag = document.createElement("p");
       let title = spot_list[i].stitle;
