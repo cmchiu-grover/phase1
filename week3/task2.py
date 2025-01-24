@@ -59,7 +59,13 @@ for i in range(3):
             path = path[1:]
 
         connection = http.client.HTTPSConnection(host)
-        connection.request("GET", path)
+
+        # 設定 headers，包含 Cookie
+        headers = {
+            "Cookie": "over18=1"  # 模擬已通過年齡驗證
+        }
+        
+        connection.request("GET", path, headers=headers)
         response = connection.getresponse()
 
         # 處理重定向 (301 或 302)
@@ -77,6 +83,11 @@ for i in range(3):
 
             # 建立新的連線，重新請求
             connection = http.client.HTTPSConnection(new_host)
+
+            headers = {
+                "Cookie": "over18=1"  # 模擬已通過年齡驗證
+            }
+
             connection.request("GET", new_path)
             response = connection.getresponse()
 

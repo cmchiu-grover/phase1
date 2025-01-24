@@ -13,9 +13,15 @@ def getArticleDate(url):
     host = parsed_url.netloc
     path = parsed_url.path if parsed_url.path else "/"
 
-    # 建立 HTTP 連線並取得資料
+    # 建立 HTTPS 連線並取得資料
     connection = http.client.HTTPSConnection(host)
-    connection.request("GET", path)
+
+    # 設定 headers，包含 Cookie
+    headers = {
+        "Cookie": "over18=1"  # 模擬已通過年齡驗證
+    }
+
+    connection.request("GET", path, headers=headers)
     response = connection.getresponse()
 
 # 處理重定向 (301 或 302)
@@ -34,6 +40,12 @@ def getArticleDate(url):
 
         # 建立新的連線，重新請求
         connection = http.client.HTTPSConnection(new_host)
+        
+        # 設定 headers，包含 Cookie
+        headers = {
+            "Cookie": "over18=1"  # 模擬已通過年齡驗證
+        }
+        
         connection.request("GET", new_path)
         response = connection.getresponse()
 
