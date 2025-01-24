@@ -57,7 +57,7 @@ let getSpotList = async (url) => {
 
     for (i = 0; i < text_item.length && i < spot_list.length; i++) {
       let div_text = text_item[i];
-      var p_tag = document.createElement("p");
+      let p_tag = document.createElement("p");
       let title = spot_list[i].stitle;
       p_tag.textContent = `${title}`;
       div_text.appendChild(p_tag);
@@ -91,7 +91,7 @@ let moreSpotList = async (url, n) => {
 
     for (let i = n; i < text_item.length && i < spot_list.length; i++) {
       let div_text = text_item[i];
-      var p_tag = document.createElement("p");
+      let p_tag = document.createElement("p");
       let title = spot_list[i].stitle;
       p_tag.textContent = `${title}`;
       div_text.appendChild(p_tag);
