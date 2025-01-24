@@ -66,7 +66,7 @@ for i in range(3):
         if response.status in (301, 302):
             redirect_url = response.getheader("Location")  # 取得新的 URL
             redirect_url = "https://www.ptt.cc" + redirect_url
-            print(f'舊的 URL: {url} 不可行')
+            print(f'舊的 URL: {next_page_url} 不可行')
             print(f"重定向到新的 URL: {redirect_url}")
             print(f'-----------------------------------------------------')
 
