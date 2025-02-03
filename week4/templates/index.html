@@ -1,0 +1,33 @@
+{% extends 'base.html' %} {% block content %}
+<div class="container">
+  <h1>登入系統</h1>
+  <div class="login_area">
+    <form action="/signin" method="post" onsubmit="validateForm(event)">
+      <div>
+        <label for="username">帳號</label>
+        <input
+          type="text"
+          id="username"
+          name="username"
+          value="{{ username or '' }}"
+        />
+      </div>
+      <div>
+        <label for="password">密碼</label>
+        <input
+          type="password"
+          id="password"
+          name="password"
+          value="{{ password or '' }}"
+        />
+      </div>
+      <div>
+        <label for="agree">同意條款</label>
+        <input type="checkbox" id="agree" />
+      </div>
+
+      <button type="submit">登入</button>
+    </form>
+  </div>
+</div>
+{% endblock %}

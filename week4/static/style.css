@@ -1,0 +1,195 @@
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+ul li {
+  list-style-type: none;
+}
+
+body {
+  background-size: cover;
+  height: 100vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  display: flex;
+  flex-direction: column;
+}
+body header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 20vh;
+  border: 1px solid black;
+  background-color: rgb(14, 34, 86);
+  color: white;
+}
+body main {
+  margin: 0;
+  padding-top: 0;
+  height: 50vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* 添加一個半透明遮罩層 */
+}
+body main div.container {
+  width: 70vw;
+  position: relative;
+  z-index: 2; /* 確保內容在遮罩層上方 */
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.6); /* 更透明的背景 */
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px); /* 毛玻璃效果 */
+}
+body main div.container h1 {
+  color: #444;
+  margin-bottom: 1.5rem;
+  font-size: 2.5rem;
+  text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8);
+}
+body main div.container div.login_area {
+  font-size: 1rem;
+}
+body main div.container div.login_area form div {
+  margin: 10px;
+}
+body main div.container div.login_area form div.form-group {
+  text-align: left;
+  margin: 1rem;
+}
+body main div.container div.register_area {
+  font-size: 1rem;
+}
+body main div.container div.register_area form {
+  display: flex;
+}
+body main div.container div.register_area form div.form-group {
+  text-align: left;
+  margin: 1rem;
+}
+body main section.result_main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 95vw;
+  z-index: 2; /* 確保內容在遮罩層上方 */
+}
+body main section.result_main h1 {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  padding: 0.25rem;
+  border-radius: 10px;
+  text-align: center;
+  font-size: 2rem;
+  background-color: rgba(255, 255, 255, 0.8);
+}
+body main section.result_main section.result {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 2rem;
+  border-radius: 10px;
+}
+body main section.result_main section.result div.result {
+  width: 33%;
+  margin-left: 2rem;
+  margin-right: 2rem;
+}
+body main section.result_main section.result div.result h2 {
+  text-align: center;
+}
+body main section.result_main section.result div.result div.result_area {
+  width: 100%;
+  height: 30vw;
+  overflow: auto;
+}
+body main section.result_main section.result div.result div.result_area article {
+  border: red;
+}
+body main section.result_main section.result div.result div.result_area ul {
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  border: red;
+}
+body main section.result_main section.result div.result div.result_area ul li {
+  list-style-type: none;
+}
+body main section.result_main section.result div.result div.result_area ul h3 {
+  font-size: 1rem;
+  font-weight: bolder;
+}
+body main div.dashboard {
+  display: flex;
+}
+body main div.dashboard div.dashboard_chart {
+  margin: 1rem;
+  justify-items: center;
+  text-align: center;
+}
+body main div.dashboard div.dashboard_chart h2 {
+  margin: 1rem;
+  padding: 0.5rem;
+  background-color: rgba(255, 255, 255, 0.8);
+}
+body main div.welcome {
+  text-align: center;
+}
+body main div.welcome h2 {
+  margin: 1rem;
+  padding: 0.5rem;
+  background-color: rgba(255, 255, 255, 0.8);
+}
+body section.map {
+  padding: 2rem;
+}
+body section.map .map-image {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 4rem 0 0 0;
+}
+body section.map .map-image iframe {
+  width: 100%;
+  height: 500px;
+  border: none;
+}
+body footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.3);
+  flex-grow: 1;
+}
+body footer .footer-cover {
+  display: flex;
+  position: relative;
+  padding: 0 1rem;
+}
+body footer .footer-cover::before {
+  content: "";
+  position: absolute;
+  border-radius: 10px;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, 0.5); /* 白色半透明遮罩 */
+  z-index: -1;
+}
+body footer section.links a {
+  text-decoration: none;
+  color: rgb(54, 57, 106);
+  font-size: 20px;
+  font-weight: bold;
+}/*# sourceMappingURL=style.css.map */
