@@ -10,3 +10,18 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 });
+
+function numConfirm(event) {
+  event.preventDefault();
+
+  const numInput = document.getElementById("num");
+  const numValue = numInput.value.trim();
+
+  if (numValue === "" || isNaN(numValue) || parseInt(numValue) <= 0) {
+    alert("請輸入正整數");
+    event.preventDefault();
+    return;
+  }
+
+  window.location.href = "/square/" + numValue;
+}
