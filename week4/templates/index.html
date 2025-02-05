@@ -2,7 +2,7 @@
 <div class="container">
   <h1>登入系統</h1>
   <div class="signin_area">
-    <form action="/signin" method="post" onsubmit="agreeCheck(event)">
+    <form id="signin" action="/signin" method="post">
       <div>
         <label for="username">帳號</label>
         <input
@@ -33,7 +33,7 @@
 <div class="container">
   <h1>計算正整數的平方</h1>
   <div class="cul_area">
-    <form action="/square" method="post" onsubmit="numConfirm(event)">
+    <form id="square" action="/square" method="post">
       <div>
         <label for="num">正整數</label>
         <input type="text" id="num" name="num" value="{{ num or '' }}" />
