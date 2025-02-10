@@ -8,7 +8,7 @@
 mysql> CREATE DATABASE website;
 ```
 
-![image](url)
+![image]([url](https://github.com/cmchiu-grover/phase1/blob/main/week5/img/001.jpg))
 
 - Create a new table named member, in the website database, designed as below:...
 
