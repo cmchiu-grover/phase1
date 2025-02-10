@@ -13,14 +13,14 @@ mysql> CREATE DATABASE website;
 - Create a new table named member, in the website database, designed as below:...
 
 ```
-mysql> CREATE TABLE member (
-    -> id BIGINT AUTO_INCREMENT PRIMARY KEY,
-    -> name VARCHAR(255) NOT NULL,
-    -> username VARCHAR(255) NOT NULL,
-    -> `password` VARCHAR(255) NOT NULL,
-    -> follower_count INT NOT NULL DEFAULT 0,
-    -> `time` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP
-    -> );
+CREATE TABLE member (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    username VARCHAR(255) NOT NULL,
+    `password` VARCHAR(255) NOT NULL,
+    follower_count INT NOT NULL DEFAULT 0,
+    `time` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP
+    );
 ```
 
 ![image](url)
