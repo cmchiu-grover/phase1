@@ -8,7 +8,7 @@
 mysql> CREATE DATABASE website;
 ```
 
-![image]([url](https://github.com/cmchiu-grover/phase1/blob/main/week5/img/001.jpg))
+![image](https://github.com/cmchiu-grover/phase1/blob/main/week5/img/001.jpg)
 
 - Create a new table named member, in the website database, designed as below:...
 
@@ -23,7 +23,7 @@ CREATE TABLE member (
     );
 ```
 
-![image](url)
+![image](https://github.com/cmchiu-grover/phase1/blob/main/week5/img/002.jpg)
 
 ## Task 3: SQL CRUD
 
@@ -37,7 +37,7 @@ INSERT INTO member (name, username, `password`) VALUES ('user003', 'user003', 'q
 INSERT INTO member (name, username, `password`) VALUES ('user004', 'user004', 'qaz12345');
 ```
 
-![image](url)
+![image](https://github.com/cmchiu-grover/phase1/blob/main/week5/img/003.jpg)
 
 - SELECT all rows from the member table.
 
@@ -45,7 +45,7 @@ INSERT INTO member (name, username, `password`) VALUES ('user004', 'user004', 'q
 SELECT * FROM member;
 ```
 
-![image](url)
+![image](https://github.com/cmchiu-grover/phase1/blob/main/week5/img/004.jpg)
 
 - SELECT all rows from the member table, in descending order of time.
 
@@ -53,7 +53,7 @@ SELECT * FROM member;
 SELECT * FROM member ORDER BY `time` DESC;
 ```
 
-![image](url)
+![image](https://github.com/cmchiu-grover/phase1/blob/main/week5/img/005.jpg)
 
 - SELECT total 3 rows, second to fourth, from the member table, in descending order of time.
 
@@ -61,7 +61,7 @@ SELECT * FROM member ORDER BY `time` DESC;
 SELECT * FROM member ORDER BY `time` DESC LIMIT 1,3;
 ```
 
-![image](url)
+![image](https://github.com/cmchiu-grover/phase1/blob/main/week5/img/006.jpg)
 
 - SELECT rows where username equals to test.
 
@@ -69,7 +69,7 @@ SELECT * FROM member ORDER BY `time` DESC LIMIT 1,3;
 SELECT * FROM member WHERE username = 'test'
 ```
 
-![image](url)
+![image](https://github.com/cmchiu-grover/phase1/blob/main/week5/img/007.jpg)
 
 - SELECT rows where name includes the es keyword.
 
@@ -77,7 +77,7 @@ SELECT * FROM member WHERE username = 'test'
 SELECT * FROM member WHERE name like '%es%';
 ```
 
-![image](url)
+![image](https://github.com/cmchiu-grover/phase1/blob/main/week5/img/008.jpg)
 
 - SELECT rows where both username and password equal to test.
 
@@ -85,7 +85,7 @@ SELECT * FROM member WHERE name like '%es%';
 SELECT * FROM member WHERE (username = 'test' and `password` = 'test');
 ```
 
-![image](url)
+![image](https://github.com/cmchiu-grover/phase1/blob/main/week5/img/009.jpg)
 
 - UPDATE data in name column to test2 where username equals to test.
 
@@ -93,7 +93,7 @@ SELECT * FROM member WHERE (username = 'test' and `password` = 'test');
 UPDATE member SET name = 'test2' WHERE username = 'test';
 ```
 
-![image](url)
+![image](https://github.com/cmchiu-grover/phase1/blob/main/week5/img/010.jpg)
 
 ## Task 4: SQL Aggregation Functions
 
@@ -103,7 +103,7 @@ UPDATE member SET name = 'test2' WHERE username = 'test';
 SELECT COUNT(id) FROM member;
 ```
 
-![image](url)
+![image](https://github.com/cmchiu-grover/phase1/blob/main/week5/img/011.jpg)
 
 - SELECT the sum of follower_count of all the rows from the member table.
 
@@ -111,7 +111,7 @@ SELECT COUNT(id) FROM member;
 SELECT SUM(follower_count) AS `Sum of follower_count of all the rows` FROM member;
 ```
 
-![image](url)
+![image](https://github.com/cmchiu-grover/phase1/blob/main/week5/img/012.jpg)
 
 - SELECT the average of follower_count of all the rows from the member table.
 
@@ -119,7 +119,7 @@ SELECT SUM(follower_count) AS `Sum of follower_count of all the rows` FROM membe
 SELECT AVG(follower_count) AS `Average of follower_count of all the rows` FROM member;
 ```
 
-![image](url)
+![image](https://github.com/cmchiu-grover/phase1/blob/main/week5/img/013.jpg)
 
 - SELECT the average of follower_count of the first 2 rows, in descending order of follower_count, from the member table.
 
@@ -127,4 +127,4 @@ SELECT AVG(follower_count) AS `Average of follower_count of all the rows` FROM m
 SELECT AVG(follower_count) AS `Average of follower_count of the first 2 the rows` FROM ( SELECT * FROM member ORDER BY follower_count DESC LIMIT 2) t;
 ```
 
-![image](url)
+![image](https://github.com/cmchiu-grover/phase1/blob/main/week5/img/014.jpg)
