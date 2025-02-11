@@ -149,7 +149,7 @@ CREATE TABLE message (
 - SELECT all messages, including sender names. We have to JOIN the member table
 
 ```
-SELECT DISTINCT b.*, a.* FROM message bLEFT JOIN member a ON a.id = b.member_id;
+SELECT DISTINCT b.*, a.username FROM message b LEFT JOIN member a ON a.id = b.member_id;
 ```
 
 ![image](https://github.com/cmchiu-grover/phase1/blob/main/week5/img/016.jpg)
@@ -158,7 +158,7 @@ SELECT DISTINCT b.*, a.* FROM message bLEFT JOIN member a ON a.id = b.member_id;
   test. We have to JOIN the member table to filter and get that.
 
 ```
-SELECT DISTINCT b.*, a.* FROM message b LEFT JOIN member a ON a.id = b.member_id
+SELECT DISTINCT b.*, a.username FROM message b LEFT JOIN member a ON a.id = b.member_id
 WHERE a.username = 'test';
 ```
 
