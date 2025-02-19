@@ -50,11 +50,10 @@ def deleteMessage(message_id, member_id):
         statement = select(Message).where(Message.id == message_id)
         results = session.exec(statement)
         message = results.one()
-        if message.member_id == member_id:
-            session.delete(message)
-            session.commit()
-        else:
-            return
+
+        session.delete(message)
+        session.commit()
+
 
 def checkUsername(new_username):
     try:
