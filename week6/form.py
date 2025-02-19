@@ -42,14 +42,19 @@ class Message(SQLModel, table=True):
 
     __table_args__ = {'extend_existing': True}
 
-def deleteMessage(message_id):
+def deleteMessage(message_id, member_id):
     message_id = int(message_id)
+    member_id = int(member_id)
+
     with Session(engine) as session:
         statement = select(Message).where(Message.id == message_id)
         results = session.exec(statement)
         message = results.one()
-        session.delete(message)
-        session.commit()
+        if message.member_id == member_id:
+            session.delete(message)
+            session.commit()
+        else:
+            return
 
 def checkUsername(new_username):
     try:

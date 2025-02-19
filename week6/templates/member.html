@@ -43,7 +43,7 @@
       <button
         class="button{{message[0].id|string}}"
         type="button"
-        onclick="checkDelete(event); location.href='/deleteMessage?message_id={{message[0].id|string}}'; "
+        onclick="checkDelete(event, '{{message[0].id|string}}', '{{id|string}}')"
       >
         x
       </button>

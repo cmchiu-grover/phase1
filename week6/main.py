@@ -50,6 +50,7 @@ async def index(request: Request):
 async def index(request: Request):
     user = request.session.get("user")
     username = request.session.get("username")
+    member_id = request.session.get("id")
     messages = []
     if user:
         with Session(engine) as session:
@@ -62,6 +63,7 @@ async def index(request: Request):
         "request": request, 
         "user": user,
         "name": username,
+        "id": member_id,
         "messages": messages,
         })
 
@@ -165,8 +167,11 @@ async def error_page(request: Request, message: str):
         })
 
 @app.get("/deleteMessage", response_class=HTMLResponse)
-async def delete_button(request: Request, message_id: str):
-    deleteMessage(message_id)
+async def delete_button(request: Request, message_id: str, user_id: str):
+    req_user_id = request.session.get("id")
+    if str(req_user_id) != user_id:
+        return RedirectResponse(url="/member", status_code=302) 
+    deleteMessage(message_id, user_id)
     return RedirectResponse(url="/member", status_code=302) 
 
 @app.exception_handler(HTTPException)
