@@ -18,11 +18,8 @@ function fillContent(event) {
 }
 
 function checkDelete(event) {
-  console.log("開始判斷");
   let text = "是否刪除這則留言？";
-  if (confirm(text)) {
-    form.submit();
-  } else {
+  if (!confirm(text)) {
     event.preventDefault();
   }
 }

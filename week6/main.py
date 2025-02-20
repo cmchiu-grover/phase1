@@ -144,8 +144,7 @@ async def content_form(
 
 @app.get("/signout")
 def signout(request: Request):
-    request.session.pop("user", None)
-    request.session.pop("id", None)  
+    request.session.clear()  # 清除 session
     return RedirectResponse(url="/", status_code=302)
 
 @app.get("/success")
@@ -167,15 +166,17 @@ async def error_page(request: Request, message: str):
         })
 
 @app.post("/deleteMessage", response_class=HTMLResponse)
-async def delete_button(request: Request, message_id: str = Form(...)):
+async def delete_button(request: Request, message_id: int = Form(...)):
     
     with Session(engine) as session:
-        statement = select(Message, MemberForm).join(MemberForm, isouter=True).where(Message.id == int(message_id))
+        statement = select(Message, MemberForm).join(MemberForm, isouter=True).where(Message.id == message_id)
         result = session.exec(statement)
-        message = result.one()
+        message = result.one_or_none()
+    
+    if not message:
+        return RedirectResponse(url="/member", status_code=302)
     
     user = request.session.get("user")
-    print(message)
     
     if message[1].username != user:
         return RedirectResponse(url="/member", status_code=302) 

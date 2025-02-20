@@ -39,11 +39,7 @@
       <div class="content">
         <p class="name">{{message[1].name}}：</p>
         <p class="content">{{message[0].content}}</p>
-        <input
-          name="message_id"
-          hidden="true"
-          value="{{message[0].id|string}}"
-        />
+        <input name="message_id" type="hidden" value="{{message[0].id}}" />
         {% if user == message[1].username %}
         <button class="button{{message[0].id|string}}" type="submit">x</button>
         {% else %} {% endif %}
