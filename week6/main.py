@@ -166,12 +166,20 @@ async def error_page(request: Request, message: str):
         "message": message
         })
 
-@app.get("/deleteMessage", response_class=HTMLResponse)
-async def delete_button(request: Request, message_id: str, user_id: str):
-    req_user_id = request.session.get("id")
-    if str(req_user_id) != user_id:
+@app.post("/deleteMessage", response_class=HTMLResponse)
+async def delete_button(request: Request, message_id: str = Form(...)):
+    
+    with Session(engine) as session:
+        statement = select(Message, MemberForm).join(MemberForm, isouter=True).where(Message.id == int(message_id))
+        result = session.exec(statement)
+        message = result.one()
+    
+    user = request.session.get("user")
+    print(message)
+    
+    if message[1].username != user:
         return RedirectResponse(url="/member", status_code=302) 
-    deleteMessage(message_id, user_id)
+    deleteMessage(message_id)
     return RedirectResponse(url="/member", status_code=302) 
 
 @app.exception_handler(HTTPException)

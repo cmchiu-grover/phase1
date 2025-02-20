@@ -127,16 +127,16 @@ body main div.container div.content_area form div {
   margin-top: 10px;
   margin-bottom: 10px;
 }
-body main div.container div.message_area div.content {
+body main div.container div.message_area form div.content {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
 }
-body main div.container div.message_area div.content p {
+body main div.container div.message_area form div.content p {
   margin: 5px 0 5px 0;
 }
-body main div.container div.message_area div.content button {
+body main div.container div.message_area form div.content button {
   margin-left: 10px;
   padding: 0 2px 0 2px;
 }

@@ -139,17 +139,19 @@ body {
       }
 
       div.message_area {
-        div.content {
-          display: flex;
-          flex-direction: row;
-          justify-content: center;
-          align-items: center;
-          p {
-            margin: 5px 0 5px 0;
-          }
-          button {
-            margin-left: 10px;
-            padding: 0 2px 0 2px;
+        form {
+          div.content {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            p {
+              margin: 5px 0 5px 0;
+            }
+            button {
+              margin-left: 10px;
+              padding: 0 2px 0 2px;
+            }
           }
         }
       }

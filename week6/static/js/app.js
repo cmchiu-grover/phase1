@@ -17,10 +17,12 @@ function fillContent(event) {
   }
 }
 
-function checkDelete(event, messageId, userId) {
-  event.preventDefault();
+function checkDelete(event) {
+  console.log("開始判斷");
   let text = "是否刪除這則留言？";
   if (confirm(text)) {
-    window.location.href = `/deleteMessage?message_id=${messageId}&user_id=${userId}`;
+    form.submit();
+  } else {
+    event.preventDefault();
   }
 }

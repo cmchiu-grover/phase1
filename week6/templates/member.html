@@ -35,20 +35,21 @@
 <div class="container">
   <div class="message_area">
     {% for message in messages %}
-    <div class="content">
-      <p class="name">{{message[1].name}}：</p>
-      <p class="content">{{message[0].content}}</p>
-      {% if user == message[1].username %}
-
-      <button
-        class="button{{message[0].id|string}}"
-        type="button"
-        onclick="checkDelete(event, '{{message[0].id|string}}', '{{id|string}}')"
-      >
-        x
-      </button>
-      {% else %} {% endif %}
-    </div>
-    {% endfor%} {% endblock %}
+    <form method="post" action="/deleteMessage" onsubmit="checkDelete(event)">
+      <div class="content">
+        <p class="name">{{message[1].name}}：</p>
+        <p class="content">{{message[0].content}}</p>
+        <input
+          name="message_id"
+          hidden="true"
+          value="{{message[0].id|string}}"
+        />
+        {% if user == message[1].username %}
+        <button class="button{{message[0].id|string}}" type="submit">x</button>
+        {% else %} {% endif %}
+      </div>
+    </form>
+    {% endfor%}
   </div>
 </div>
+{% endblock %}
