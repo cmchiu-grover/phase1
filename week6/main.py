@@ -169,16 +169,16 @@ async def error_page(request: Request, message: str):
 async def delete_button(request: Request, message_id: int = Form(...)):
     
     with Session(engine) as session:
-        statement = select(Message, MemberForm).join(MemberForm, isouter=True).where(Message.id == message_id)
+        statement = select(Message).where(Message.id == message_id)
         result = session.exec(statement)
         message = result.one_or_none()
     
     if not message:
         return RedirectResponse(url="/member", status_code=302)
     
-    user = request.session.get("user")
+    member_id = request.session.get("id")
     
-    if message[1].username != user:
+    if message.member_id != member_id:
         return RedirectResponse(url="/member", status_code=302) 
     deleteMessage(message_id)
     return RedirectResponse(url="/member", status_code=302) 
