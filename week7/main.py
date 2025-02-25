@@ -241,7 +241,6 @@ def update_member_name(request: Request, json_data: UpdateMemberName):
             session.commit()
             session.refresh(member_data)
         
-        print(json_data.name)
         request.session["username"] = json_data.name
         request.session.modified = True
         
