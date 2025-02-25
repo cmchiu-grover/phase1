@@ -1,0 +1,190 @@
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Microsoft JhengHei", Arial, sans-serif;
+}
+
+ul li {
+  list-style-type: none;
+}
+
+body {
+  background-size: cover;
+  height: 100vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  display: flex;
+  flex-direction: column;
+}
+body header {
+  background-color: rgb(17, 111, 174);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body header p {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 24px;
+  color: white;
+}
+body header nav {
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+body header nav ul {
+  display: flex;
+}
+body header nav ul li {
+  padding: 8px 15px;
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 2px solid rgb(17, 111, 174);
+  border-radius: 20px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: #666;
+  text-decoration: none;
+  margin: 1rem;
+}
+body header nav ul li a {
+  font-size: 1.15rem;
+  transition: all 0.3s ease;
+  color: #666;
+  text-decoration: none;
+}
+body header nav ul li a:hover {
+  color: white;
+}
+body header nav ul li:hover {
+  background-color: rgb(17, 111, 174);
+  transform: translateY(-2px);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+body .cover {
+  padding-top: 4rem;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+body .cover:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, 0.3); /* 白色半透明遮罩 */
+  z-index: -1;
+}
+body main {
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* 添加一個半透明遮罩層 */
+}
+body main div.container {
+  width: 60%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  position: relative;
+  z-index: 2; /* 確保內容在遮罩層上方 */
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.6); /* 更透明的背景 */
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px); /* 毛玻璃效果 */
+}
+body main div.container h1,
+body main div.container h2 {
+  color: #444;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 24px;
+  text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8);
+}
+body main div.container div {
+  margin-bottom: 10px;
+}
+body main div.container div.register_area,
+body main div.container div.welcome_area,
+body main div.container div.signin_area,
+body main div.container div.message_area,
+body main div.container div.content_area {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+body main div.container div.register_area form div,
+body main div.container div.welcome_area form div,
+body main div.container div.signin_area form div,
+body main div.container div.message_area form div,
+body main div.container div.content_area form div {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+body main div.container div.search_area,
+body main div.container div.modify_area {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+body main div.container div.search_area form,
+body main div.container div.search_area p,
+body main div.container div.search_area div,
+body main div.container div.modify_area form,
+body main div.container div.modify_area p,
+body main div.container div.modify_area div {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+body main div.container div.message_area form div.content {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+body main div.container div.message_area form div.content p {
+  margin: 5px 0 5px 0;
+}
+body main div.container div.message_area form div.content button {
+  margin-left: 10px;
+  padding: 0 2px 0 2px;
+}
+body main div.container div.welcome_area div p,
+body main div.container div.welcome_area div a {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+body footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.3);
+  flex-grow: 1;
+}
+body footer .footer-cover {
+  display: flex;
+  position: relative;
+  padding: 0 1rem;
+}
+body footer .footer-cover::before {
+  content: "";
+  position: absolute;
+  border-radius: 10px;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, 0.5); /* 白色半透明遮罩 */
+  z-index: -1;
+}
+body footer section.links a {
+  text-decoration: none;
+  color: rgb(54, 57, 106);
+  font-size: 20px;
+  font-weight: bold;
+}/*# sourceMappingURL=style.css.map */
