@@ -32,7 +32,7 @@ function checkDelete(event) {
 
 async function searchMemberName() {
   let username = document.getElementById("inputUserName").value;
-  console.log(`username is ${username}`);
+
   url = "http://127.0.0.1:3000/api/member?username=" + username;
 
   let fetchPromise = await fetch(url, {
