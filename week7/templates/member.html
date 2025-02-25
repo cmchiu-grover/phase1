@@ -8,6 +8,7 @@
     </div>
   </div>
 </div>
+
 <div class="container">
   <div class="content_area">
     <p>快來留言吧！</p>
@@ -52,8 +53,8 @@
 <div class="container">
   <div class="search_area">
     <p>查詢會員姓名</p>
-    <form>
-      <input id="inputUserName" type="text" />
+    <form autocomplete="off">
+      <input id="inputUserName" type="text" autocomplete="off" />
       <button id="searchName" type="button" onclick="searchMemberName()">
         查詢
       </button>
@@ -65,8 +66,8 @@
 <div class="container">
   <div class="modify_area">
     <p>更新我的姓名</p>
-    <form>
-      <input id="inputNewName" type="text" />
+    <form autocomplete="off">
+      <input id="inputNewName" type="text" autocomplete="off" />
       <button id="updateName" type="button" onclick="updateMemberName()">
         更新
       </button>

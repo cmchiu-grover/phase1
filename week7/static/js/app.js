@@ -94,7 +94,8 @@ async function updateMemberPage() {
     let new_name = new_member_html.querySelector(".welcome_area p").innerText;
     document.querySelector(".welcome_area p").innerText = new_name;
 
-    let new_messages_area = new_html.querySelector(".message_area").innerHTML;
+    let new_messages_area =
+      new_member_html.querySelector(".message_area").innerHTML;
     document.querySelector(".message_area").innerHTML = new_messages_area;
   } catch (error) {
     console.error(error);

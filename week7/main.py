@@ -28,11 +28,6 @@ SECRET_KEY = os.getenv("SECRET_KEY", "default_secret")
 
 
 app = FastAPI()
-origins = [
-    "http://localhost",
-    "http://localhost:3000"
-    "http://localhost:8000",
-]
 
 app.add_middleware(SessionMiddleware,
                    secret_key=SECRET_KEY)
@@ -41,6 +36,8 @@ app.add_middleware(SessionMiddleware,
 origins = [
     "http://localhost:3000",
     "http://localhost:8000",
+    "http://127.0.0.1:3000",
+    "http://127.0.0.1:8000",
 ]
 
 app.add_middleware(
