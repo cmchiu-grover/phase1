@@ -33,7 +33,7 @@ function checkDelete(event) {
 async function searchMemberName() {
   let username = document.getElementById("inputUserName").value;
 
-  url = "http://127.0.0.1:3000/api/member?username=" + username;
+  url = "/api/member?username=" + username;
 
   let fetchPromise = await fetch(url, {
     method: "GET",
@@ -61,7 +61,7 @@ async function updateMemberName() {
   obj = { name: new_name };
   json_data = JSON.stringify(obj);
 
-  const url = "http://127.0.0.1:3000/api/member";
+  const url = "/api/member";
   let text_div = document.getElementById("updatedMessage");
   try {
     await fetch(url, {
@@ -82,7 +82,7 @@ async function updateMemberName() {
 
 async function updateMemberPage() {
   try {
-    let response = await fetch("http://127.0.0.1:3000/member", {
+    let response = await fetch("/member", {
       method: "GET",
       credentials: "include",
     });
