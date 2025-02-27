@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include ("head_setting") %>
+    <title>WeHelp Task</title>
+  </head>
+  <body>
+    <header>
+      <% if (user) { %>
+      <p>歡迎光臨，<%= user.name %>！</p>
+      <% } else { %>
+      <p>歡迎光臨，請註冊 / 登入系統</p>
+      <% } %>
+    </header>
+
+    <main>
+      <div class="container">
+        <div class="register_area">
+          <form action="/auth/signup" method="POST">
+            <div class="form-group">
+              <label for="exampleUsername">姓名：</label>
+              <input
+                name="name"
+                type="text"
+                class="form-control"
+                id="exampleName"
+                required
+                minlength="3"
+                maxlength="255"
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="exampleInputUsername">帳號：</label>
+              <input
+                type="text"
+                class="form-control"
+                id="exampleInputUsername"
+                name="username"
+                required
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="exampleInputPassword1">密碼：</label>
+              <input
+                type="password"
+                class="form-control"
+                id="exampleInputPassword1"
+                maxlength="1024"
+                name="password"
+                required
+              />
+            </div>
+
+            <button type="submit" class="btn btn-primary">註冊</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="signin_area">
+          <form action="/auth/signin" method="POST">
+            <div class="form-group">
+              <label for="exampleInputEmail1">帳號：</label>
+              <input
+                type="text"
+                class="form-control"
+                id="loginUsername"
+                name="username"
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="exampleInputPassword1">密碼：</label>
+              <input
+                type="password"
+                class="form-control"
+                id="loginPassword1"
+                name="password"
+              />
+            </div>
+
+            <button class="btn btn-primary">登入</button>
+          </form>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

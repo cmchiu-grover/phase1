@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include ("head_setting") %>
+    <title>WeHelp Task</title>
+  </head>
+  <body>
+    <header>
+      <% if (member) { %>
+      <p>歡迎光臨，<%= member.name %>！</p>
+      <% } else { %>
+      <p>歡迎光臨，請註冊 / 登入系統</p>
+      <% } %>
+    </header>
+    <main>
+      <div class="container">
+        <div class="welcome_area">
+          <div>
+            <p><%= member.name %>，歡迎登入系統</p>
+            <a href="/auth/signout">登出系統</a>
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="content_area">
+          <p>快來留言吧！</p>
+          <form
+            class="content"
+            method="post"
+            action="/member/createMessage"
+            onsubmit="fillContent(event)"
+          >
+            <div>
+              <label for="content">內容：</label>
+              <input
+                type="text"
+                id="content"
+                name="content"
+                value="<%= content || '' %>"
+              />
+            </div>
+
+            <button type="submit">送出</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="message_area">
+          <% if (messages && messages.length > 0) { %> <%
+          messages.forEach(message => { %>
+          <form
+            method="post"
+            action="/member/deleteMessage"
+            onsubmit="checkDelete(event)"
+          >
+            <div class="content">
+              <p class="name"><%= message.name %>：</p>
+              <p class="content"><%= message.content %></p>
+              <input
+                name="message_id"
+                type="hidden"
+                value="<%= message.id %>"
+              />
+              <% if (member.id === message.member_id) { %>
+              <button class="button<%= message.id %>" type="submit">x</button>
+              <% } %>
+            </div>
+          </form>
+          <% }); %> <% } %>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

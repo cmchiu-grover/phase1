@@ -15,4 +15,7 @@ week6/.env
 week6/test.ipynb
 week7/.env
 week7/test.ipynb
+week7_js/node_modules
+week7_js/package-lock.json
+week7_js/package.json
 .gitignore
