@@ -19,4 +19,4 @@ week7_js/node_modules
 week7_js/package-lock.json
 week7_js/package.json
 .gitignore
-*.sqlite3
+*.scss
