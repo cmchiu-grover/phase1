@@ -41,16 +41,13 @@ async function searchMemberName() {
   });
 
   let JSON = await fetchPromise.json();
-  console.log("JSON is...");
-  console.log(JSON);
+
   let text_div = document.getElementById("showUsername");
   if (!JSON.data) {
-    console.log("name is...null");
     text_div.innerText = "無此會員";
   } else {
     let name = JSON.data.name;
-    console.log("name is...");
-    console.log(name);
+
     text_div.innerText = `${name}`;
   }
 }

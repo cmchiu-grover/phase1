@@ -1,5 +1,5 @@
 from fastapi import FastAPI, Request, Form, Response
-from fastapi.middleware.cors import CORSMiddleware
+
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 from fastapi.responses import RedirectResponse, HTMLResponse, JSONResponse
@@ -15,38 +15,17 @@ from dotenv import load_dotenv
 from sqlmodel import Session, select
 from models import engine
 
-
-
-
 STATIC_DIR = "static"
 if not os.path.exists(STATIC_DIR):
     os.makedirs(STATIC_DIR)
 
-
 load_dotenv()
 SECRET_KEY = os.getenv("SECRET_KEY", "default_secret")
-
 
 app = FastAPI()
 
 app.add_middleware(SessionMiddleware,
                    secret_key=SECRET_KEY)
-
-
-origins = [
-    "http://localhost:3000",
-    "http://localhost:8000",
-    "http://127.0.0.1:3000",
-    "http://127.0.0.1:8000",
-]
-
-app.add_middleware(
-    CORSMiddleware,
-    allow_origins=origins,
-    allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
-)
 
 templates = Jinja2Templates(directory="templates")
 
@@ -248,11 +227,9 @@ def update_member_name(request: Request, json_data: UpdateMemberName):
     except:
         return JSONResponse(content={"error":True})
 
-
 @app.exception_handler(HTTPException)
 async def not_found(request: Request, exc: HTTPException):
     return RedirectResponse(url="/error?message=您造訪了錯誤的頁面", status_code=302)
-
 
 @app.exception_handler(RequestValidationError)
 async def validation_exception_handler(request, exc):
